@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Anti-Spam and Acceptable Email Policy | WorkWise Robotics</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="WorkWise Robotics Anti-Spam and Acceptable Email Policy: prohibited email practices, enforcement and how to report abuse.">
+<meta name="color-scheme" content="light dark">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+/* Layout: dark teal masthead, then a reading column with a sticky section index beside it. */
+:root{
+  --teal:#042F35; --cream:#E6EADC; --mint:#BAF0DB; --green:#59B996; --night:#05090E;
+  --bg:#F4F6EE; --surface:#FFFFFF; --fg:#042F35; --muted:#3F5A5E; --line:rgba(4,47,53,.16);
+  --accent:#2E8F72; --accent-soft:#DCEFE6; --warn:#9B3B2E; --warn-soft:#F3E3DF;
+  --head-bg:#042F35; --head-fg:#E6EADC; --head-sub:#BAF0DB;
+  --font:"DM Sans","Helvetica Neue",Arial,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#05090E; --surface:#0B1A1D; --fg:#E6EADC; --muted:#A9BDB8; --line:rgba(230,234,220,.16);
+  --accent:#59B996; --accent-soft:#0F2A2A; --warn:#F0A090; --warn-soft:#2B1714; --head-bg:#031F24; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#05090E; --surface:#0B1A1D; --fg:#E6EADC; --muted:#A9BDB8; --line:rgba(230,234,220,.16);
+  --accent:#59B996; --accent-soft:#0F2A2A; --warn:#F0A090; --warn-soft:#2B1714; --head-bg:#031F24; color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font);font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3{line-height:1.15;margin:0;text-wrap:balance}
+p{margin:0 0 16px}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--green);outline-offset:3px}
+.pad{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1120px;margin:0 auto}
+/* masthead */
+.mast{background:var(--head-bg);color:var(--head-fg);padding-block:0 64px;background-image:radial-gradient(800px 420px at 90% -10%,rgba(89,185,153,.28),transparent 70%)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:20px;border-bottom:1px solid rgba(186,240,219,.18)}
+.bar img{display:block;height:40px;width:auto;max-width:100%}
+.bar a.site{color:var(--head-sub);font-size:15px;font-weight:500;text-decoration:none}
+.bar a.site:hover{text-decoration:underline}
+.eyebrow{display:inline-block;margin-top:56px;color:var(--head-sub);font-size:14px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.mast h1{margin-top:14px;font-size:clamp(34px,5.4vw,60px);font-weight:700;letter-spacing:-.015em;max-width:16ch}
+.mast .lede{margin:22px 0 0;font-size:clamp(18px,2vw,21px);max-width:54ch;color:var(--head-fg)}
+.meta{display:flex;flex-wrap:wrap;gap:8px 24px;margin-top:28px;font-size:15px;color:var(--head-sub)}
+.meta span b{color:var(--head-fg);font-weight:700}
+/* body */
+.layout{display:grid;grid-template-columns:230px minmax(0,1fr);gap:56px;padding-block:56px 80px}
+.toc{position:sticky;top:24px;align-self:start;font-size:15px}
+.toc h2{font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+.toc ul{list-style:none;margin:0;padding:0;border-left:2px solid var(--line)}
+.toc a{display:block;padding:8px 14px;margin-left:-2px;border-left:2px solid transparent;text-decoration:none;color:var(--muted);font-weight:500}
+.toc a:hover,.toc a.on{color:var(--fg);border-left-color:var(--green)}
+article{min-width:0;max-width:720px}
+section{padding-block:0 48px;scroll-margin-top:24px}
+section+section{padding-top:48px;border-top:1px solid var(--line)}
+article h2{font-size:clamp(26px,3vw,34px);font-weight:700;margin-bottom:18px}
+.callout{background:var(--accent-soft);border-radius:10px;padding:22px 24px;font-size:20px;font-weight:500;margin-bottom:0}
+.scope{display:flex;flex-wrap:wrap;gap:10px;list-style:none;padding:0;margin:20px 0 0}
+.scope li{background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-size:16px;font-weight:500}
+.rules{list-style:none;margin:22px 0 0;padding:0;display:grid;gap:12px}
+.rules li{display:grid;grid-template-columns:34px minmax(0,1fr);gap:16px;align-items:start;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px 20px}
+.rules .x{width:34px;height:34px;border-radius:50%;background:var(--warn-soft);color:var(--warn);display:flex;align-items:center;justify-content:center}
+.rules .x svg{width:16px;height:16px}
+.rules p{margin:0}
+.action{display:flex;gap:14px;align-items:flex-start;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:20px 22px;margin-top:20px}
+.action svg{flex:none;width:26px;height:26px;color:var(--accent);margin-top:2px}
+.action p{margin:0}
+.contact{background:var(--teal);color:var(--cream);border-radius:12px;padding:30px 32px}
+:root[data-theme="dark"] .contact,
+.contact{background:var(--head-bg)}
+.contact h2{color:var(--mint)}
+.contact p{max-width:52ch}
+.contact a.mail{color:var(--mint);font-weight:700}
+.btn{display:inline-block;margin-top:6px;min-height:50px;padding:13px 26px;background:var(--green);color:#042F35;font-weight:700;font-size:17px;text-decoration:none;border-radius:8px;border:2px solid var(--green)}
+.btn:hover{background:var(--mint);border-color:var(--mint)}
+footer{background:var(--night);color:var(--cream);padding-block:28px;font-size:15px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+footer span{color:var(--mint)}
+@media (max-width:860px){
+  body{font-size:17px}
+  .layout{grid-template-columns:minmax(0,1fr);gap:28px;padding-block:36px 56px}
+  .toc{position:static}
+  .toc ul{display:flex;flex-wrap:wrap;gap:8px;border:0}
+  .toc a{border:1px solid var(--line);border-radius:999px;margin:0;padding:6px 14px}
+  .toc a:hover,.toc a.on{border-color:var(--green)}
+  .mast{padding-bottom:44px}
+  .eyebrow{margin-top:36px}
+  .contact{padding:24px 22px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+</head>
+<body>
+
+<header class="mast pad">
+  <div class="wrap">
+    <div class="bar">
+      <a href="https://www.workwiserobotics.com" aria-label="Workwise Robotics home"><img src="data:image/png;base64,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" width="173" height="40" alt="Workwise Robotics"></a>
+      <a class="site" href="https://www.workwiserobotics.com">workwiserobotics.com</a>
+    </div>
+    <span class="eyebrow">Company policy</span>
+    <h1>Anti-Spam and Acceptable Email Policy</h1>
+    <p class="lede">WorkWise Robotics is committed to responsible email and digital communication practices. No one may advertise our domains, products or services through spam.</p>
+    <p class="meta"><span><b>Last updated</b> October 25, 2026</span><span><b>Applies to</b> employees, contractors and everyone acting on our behalf</span></p>
+  </div>
+</header>
+
+<main class="pad">
+  <div class="wrap layout">
+    <nav class="toc" aria-label="On this page">
+      <h2>On this page</h2>
+      <ul>
+        <li><a href="#commitment">Our commitment</a></li>
+        <li><a href="#scope">Who this applies to</a></li>
+        <li><a href="#prohibited">Prohibited activities</a></li>
+        <li><a href="#enforcement">Enforcement</a></li>
+        <li><a href="#report">Reporting abuse</a></li>
+      </ul>
+    </nav>
+
+    <article>
+      <section id="commitment">
+        <h2>Our commitment</h2>
+        <p class="callout">Our corporate domains, websites, trademarks, products, and services may not be advertised or promoted through spam or unsolicited bulk email.</p>
+      </section>
+
+      <section id="scope">
+        <h2>Who this applies to</h2>
+        <p>This prohibition applies to WorkWise Robotics employees, contractors, affiliates, agencies, vendors, service providers, partners, and any other third party acting on our behalf.</p>
+        <ul class="scope" aria-label="Covered parties">
+          <li>Employees</li><li>Contractors</li><li>Affiliates</li><li>Agencies</li><li>Vendors</li><li>Service providers</li><li>Partners</li><li>Any third party acting for us</li>
+        </ul>
+      </section>
+
+      <section id="prohibited">
+        <h2>Prohibited activities</h2>
+        <p>The following activities are prohibited:</p>
+        <ul class="rules">
+          <li><span class="x" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 3l10 10M13 3L3 13"/></svg></span><p>Sending unsolicited bulk email that advertises or links to a WorkWise Robotics website or domain.</p></li>
+          <li><span class="x" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 3l10 10M13 3L3 13"/></svg></span><p>Using purchased, harvested, scraped, or otherwise improperly obtained email lists for bulk advertising of our website.</p></li>
+          <li><span class="x" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 3l10 10M13 3L3 13"/></svg></span><p>Continuing to send promotional messages to recipients who have opted out or requested that communication stop.</p></li>
+          <li><span class="x" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 3l10 10M13 3L3 13"/></svg></span><p>Using misleading sender information, deceptive subject lines, unauthorized identities, or other methods intended to obscure the source or commercial nature of a message.</p></li>
+          <li><span class="x" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 3l10 10M13 3L3 13"/></svg></span><p>Allowing an affiliate, contractor, vendor, or other third party to advertise a WorkWise Robotics domain through prohibited unsolicited messaging.</p></li>
+        </ul>
+      </section>
+
+      <section id="enforcement">
+        <h2>Enforcement</h2>
+        <div class="action" style="margin-top:0">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.2 8.2-8 9-4.8-.8-8-4.5-8-9V6l8-3z"/><path d="M9 12l2 2 4-4"/></svg>
+          <p>WorkWise Robotics may suspend or terminate relationships with employees, contractors, vendors, affiliates, or service providers that violate this policy.</p>
+        </div>
+      </section>
+
+      <section id="report">
+        <div class="contact">
+          <h2>Reporting abuse</h2>
+          <p>Reports of suspected abuse involving a WorkWise Robotics domain are investigated promptly. Where appropriate, recipients are suppressed from further communications and the source of the activity is reviewed to prevent recurrence.</p>
+          <p>Questions or abuse reports regarding this policy may be directed to <a class="mail" href="mailto:info@workwiserobotics.com">info@workwiserobotics.com</a>.</p>
+          <a class="btn" href="mailto:info@workwiserobotics.com?subject=Anti-Spam%20Policy%20Report">Email info@workwiserobotics.com</a>
+        </div>
+      </section>
+    </article>
+  </div>
+</main>
+
+<footer class="pad">
+  <div class="wrap">
+    <div>&copy; 2026 WorkWise Robotics. All rights reserved.</div>
+    <span>Anti-Spam and Acceptable Email Policy · Last updated October 25, 2026</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var links=[].slice.call(document.querySelectorAll('.toc a'));
+  var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'))});
+  function on(){var y=window.scrollY+120,cur=0;secs.forEach(function(s,i){if(s&&s.offsetTop<=y)cur=i});links.forEach(function(a,i){a.classList.toggle('on',i===cur)})}
+  window.addEventListener('scroll',on,{passive:true});on();
+})();
+</script>
+
+</body>
+</html>
